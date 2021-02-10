@@ -19,6 +19,7 @@ This repository shows the project in which I transform the simple HTML structure
 **Context:**
 
 - Prefers-color-scheme
+- Print-stylesheet
 
 **Restrictions:**
 
