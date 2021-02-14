@@ -36,8 +36,15 @@ My webpage can be found at the link below:
 
 The sources I've used to create this webpage:
 
--
--
+- Wang, A. (z.d.). Attention Required! | Cloudflare. Codepen. Geraadpleegd op 12 februari 2021, van https://codepen.io/adamp33/pen/FnlmG
+- Verou, L. (z.d.). Contrast Ratio: Easily calculate color contrast ratios. Passing WCAG was never this easy! Contrast Ratio. Geraadpleegd op 12 februari 2021, van https://contrast-ratio.com/#%23c386f1-on-%23000344
+- Divinector. (2020, 25 maart). Animated Background with Pure CSS and Html | No Javascript no Jquery [Video]. YouTube. https://www.youtube.com/watch?v=qx7pSLjLNQA&t=151s
+- ’t Hooft, S. (z.d.). Attention Required! | Cloudflare. Codepen. Geraadpleegd op 11 februari 2021, van https://codepen.io/shooft/pen/dyOXrpZ
+- MDN. (2021, 9 januari). clamp() - CSS: Cascading Style Sheets | MDN. MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/CSS/clamp()
+- MDN. (2021b, januari 19). brightness() - CSS: Cascading Style Sheets | MDN. MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness()
+- Dodger. (2011, 19 november). CSS: background image on background color [StackOverflow post]. Stack Overflow. https://stackoverflow.com/questions/8195215/css-background-image-on-background-color
+- freeCodeCamp.org. (2018, 16 september). Print Styles: CSS Tutorial (Day 6 of CSS3 in 30 Days) [Video]. YouTube. https://www.youtube.com/watch?v=CAgLAeykOyU&ab_channel=freeCodeCamp.org
+- Online Tutorials. (2020, 30 december). Happy New Year Banner Animation | Twinkling Star Background Animation Effects using CSS & Javascript [Video]. YouTube. https://www.youtube.com/watch?v=Iw860SbfqP8&t=288s&ab_channel=OnlineTutorials
 
 ## :lock: License
 

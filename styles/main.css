@@ -2,6 +2,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap");
+
 :root {
   --color-1: #030534;
   --color-2: #c386f1;
@@ -94,7 +96,7 @@ h1 {
   --turn: -1deg;
   --distance: 20px;
   text-align: center;
-  font-size: 4em;
+  font-size: clamp(2.5rem, 10vw, 5rem);
   filter: brightness(200%);
   text-transform: uppercase;
   transform: skewY(var(--turn));
@@ -109,7 +111,7 @@ h3::first-letter {
 body > header {
   /* > the direct child of the body */
   text-align: center;
-  background: var(--color-1);
+  /* background: var(--color-1); */
   width: 100%;
   padding: 2em;
   margin-bottom: 2em;
@@ -146,14 +148,14 @@ main section header::after {
 }
 
 main section header h2 {
-  font-size: 32px;
+  /* font-size: 32px; */
+  font-size: clamp(1.5rem, 10vw, 4rem);
   line-height: 48px;
   height: 48px;
   margin: 20px auto;
   position: relative;
   text-align: center;
   filter: brightness(100);
-  transform: scale(2);
 }
 
 main section header p {
@@ -244,6 +246,70 @@ main span::after {
   100% {
     opacity: 0;
     transform: scale(1) rotate(0) translate3d(-300px, 300px, 0);
+  }
+}
+
+@media print {
+  * {
+    font-family: "Roboto", sans-serif;
+  }
+  h1,
+  h2 {
+    color: var(--color-2);
+    filter: brightness(0%);
+    /* margin: unset !important;
+    text-align: left !important; */
+  }
+
+  h1 {
+    font-size: 60px;
+    transform: skew(0deg);
+    font-style: normal;
+    animation: none;
+  }
+  main section header {
+    text-align: left;
+  }
+  main section header h2 {
+    margin: 0px;
+    text-align: left;
+  }
+
+  main section article {
+    padding: 0;
+  }
+
+  p,
+  cite {
+    filter: brightness(0%);
+  }
+  main {
+    /* margin: 1em; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    gap: 1em;
+    position: relative;
+  }
+  main span::after,
+  main span,
+  main section header::after {
+    display: none;
+  }
+
+  body > header p {
+    color: var(--color-2);
+    filter: brightness(0%);
+  }
+
+  main section header {
+    text-align: start;
+  }
+
+  main section header h2 {
+    font-size: 48px;
+    text-align: start;
+    filter: brightness(0%);
   }
 }
 
