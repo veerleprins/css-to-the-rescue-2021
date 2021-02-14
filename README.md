@@ -18,7 +18,8 @@ For the CSS to the Rescue course within the Minor Web Design & Development ([@cm
 This repository shows the project in which I transform the simple HTML structure of a **menu for a restaurant** into a beautiful web page. Here are a number of points that have been incorporated on the web page:
 **Context:**
 
-- Prefers-color-scheme
+<!-- - Prefers-color-scheme -->
+
 - Print-stylesheet
 
 **Restrictions:**
