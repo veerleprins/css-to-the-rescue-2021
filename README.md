@@ -9,6 +9,7 @@
 - [Datasets](#link-datasets)
 - [Install](#arrow_down-install)
 - [GitHub Pages](#globe_with_meridians-github-pages)
+- [Techniques](#star-Techniques)
 - [Sources](#books-sources)
 
 ## :black_nib: Description
@@ -32,6 +33,17 @@ To read the full process you can have a look at my [wiki]().
 ## :globe_with_meridians: Github Pages
 
 My webpage can be found at the link below:
+
+## :star: Techniques
+
+Techniques that I have learned / that I have improved myself in:
+
+- @media print
+- keyframes {}
+- clamp()
+- skewY()
+- filter()
+- gradients() - radial and linear
 
 ## :books: Sources
 

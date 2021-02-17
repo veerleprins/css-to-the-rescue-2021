@@ -17,6 +17,10 @@
   color: var(--color-2);
 }
 
+*::first-letter {
+  text-transform: uppercase;
+}
+
 html {
   font-family: "Raleway", sans-serif;
   font-weight: 100;
@@ -28,7 +32,15 @@ html {
 ********************************************************/
 
 body {
-  background: url("../images/stars.svg"), var(--color-1);
+  background: url("../images/stars.svg"),
+    linear-gradient(
+      160deg,
+      var(--color-1),
+      var(--color-1),
+      var(--color-2),
+      var(--color-1),
+      var(--color-1)
+    );
   background-size: contain;
   height: 100%;
   position: relative;
@@ -38,9 +50,59 @@ body {
 body::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  top: -40px;
+  left: -40px;
+  z-index: -1;
   display: block;
-  clip-path: circle();
+  border-radius: 100%;
+  width: 400px;
+  height: 400px;
+  background-image: linear-gradient(
+      to right top,
+      var(--color-1),
+      transparent,
+      var(--color-2)
+    ),
+    radial-gradient(
+      ellipse at 35% 25%,
+      var(--color-1) 8%,
+      var(--color-2) 12%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse at 40% 45%,
+      var(--color-1) 5%,
+      var(--color-2) 9%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 55% 75%,
+      var(--color-1) 12%,
+      var(--color-2) 16%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 80% 40%,
+      var(--color-1) 10%,
+      var(--color-2) 14%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 65% 10%,
+      var(--color-1) 4%,
+      var(--color-2) 8%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 15% 65%,
+      var(--color-1) 8%,
+      var(--color-2) 12%,
+      transparent
+    ),
+    radial-gradient(circle at 20%, var(--color-2) 10%, transparent);
+  filter: blur(1px) drop-shadow(0px 0px 20px var(--color-2)) grayscale(100%)
+    brightness(300%);
+  background-blend-mode: multiply;
 }
 
 /* 
@@ -98,30 +160,40 @@ h1 {
   text-align: center;
   font-size: clamp(2.5rem, 10vw, 5rem);
   filter: brightness(200%);
-  text-transform: uppercase;
   transform: skewY(var(--turn));
+  animation-delay: -1s;
   animation: floating 8s ease-in-out infinite;
-}
-
-h2::first-letter,
-h3::first-letter {
-  text-transform: uppercase;
 }
 
 body > header {
   /* > the direct child of the body */
   text-align: center;
-  /* background: var(--color-1); */
   width: 100%;
   padding: 2em;
   margin-bottom: 2em;
 }
 
 body > header p {
+  --turn: 2deg;
+  --distance: 20px;
   color: var(--color-2);
-  filter: brightness(200%);
+  filter: brightness(100%);
+  animation: floating 8s ease-in-out infinite;
 }
 
+main section {
+  --turn: 0deg;
+  --distance: 20px;
+  content: "";
+  width: inherit;
+  height: inherit;
+  top: 0;
+  right: 0;
+  background: var(--color-2);
+  padding: 1em;
+  animation: floating 8s ease-in-out infinite;
+  animation-delay: -2s;
+}
 main section header {
   position: relative;
   display: flex;
@@ -133,28 +205,11 @@ main section header {
   margin-bottom: 10px;
 }
 
-main section header::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  width: inherit;
-  height: inherit;
-  top: 0;
-  right: 0;
-  background: var(--color-2);
-  border-radius: 10% 10% 60% 20% / 10% 70% 10% 10%;
-  filter: hue-rotate(280deg) brightness(0.8);
-  opacity: 0.2;
-}
-
 main section header h2 {
-  /* font-size: 32px; */
   font-size: clamp(1.5rem, 10vw, 4rem);
   line-height: 48px;
   height: 48px;
-  margin: 20px auto;
   position: relative;
-  text-align: center;
   filter: brightness(100);
 }
 
@@ -192,6 +247,7 @@ main span {
   top: 0px;
   right: 10px;
   position: absolute;
+  z-index: -1;
   transform-origin: 100% 0;
   animation: star 8s infinite ease-out;
   animation-direction: normal;
@@ -200,6 +256,7 @@ main span {
 main span::after {
   content: "";
   position: absolute;
+  z-index: -1;
   top: 0px;
   left: 4px;
   border: 2px solid var(--color-2);
@@ -250,51 +307,44 @@ main span::after {
 }
 
 @media print {
-  * {
-    font-family: "Roboto", sans-serif;
+  @page {
+    size: portrait;
+    margin: 5% 10%;
   }
+
+  * {
+    font-family: "Inter", sans-serif;
+  }
+
+  *::first-letter {
+    text-transform: uppercase;
+  }
+
   h1,
-  h2 {
+  h2,
+  h3,
+  p,
+  div {
+    text-align: start;
     color: var(--color-2);
     filter: brightness(0%);
-    /* margin: unset !important;
-    text-align: left !important; */
   }
 
-  h1 {
-    font-size: 60px;
-    transform: skew(0deg);
-    font-style: normal;
-    animation: none;
-  }
-  main section header {
-    text-align: left;
-  }
-  main section header h2 {
-    margin: 0px;
-    text-align: left;
-  }
-
-  main section article {
-    padding: 0;
-  }
-
-  p,
-  cite {
-    filter: brightness(0%);
-  }
-  main {
-    /* margin: 1em; */
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
-    gap: 1em;
-    position: relative;
-  }
   main span::after,
   main span,
   main section header::after {
     display: none;
+  }
+
+  h1 {
+    transform: skew(0deg);
+    font-style: normal;
+    animation: none;
+  }
+
+  body > header {
+    margin: 0px;
+    padding: 0px;
   }
 
   body > header p {
@@ -302,13 +352,43 @@ main span::after {
     filter: brightness(0%);
   }
 
+  main {
+    display: block;
+    margin: 0px;
+  }
+
+  main section {
+    padding: 0px;
+    margin: 0px;
+  }
+
   main section header {
+    margin: 0px;
+  }
+
+  main section header h2 {
+    margin: 0px;
     text-align: start;
+  }
+
+  main section header p {
+    color: var(--color-2);
+    filter: brightness(0%);
+  }
+
+  main section article {
+    padding: 0px;
+    margin: 0px;
+    display: block;
+  }
+
+  p,
+  cite {
+    filter: brightness(0%);
   }
 
   main section header h2 {
     font-size: 48px;
-    text-align: start;
     filter: brightness(0%);
   }
 }
