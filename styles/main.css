@@ -55,52 +55,52 @@ body::after {
   z-index: -1;
   display: block;
   border-radius: 100%;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   background-image: linear-gradient(
       to right top,
       var(--color-1),
-      transparent,
-      var(--color-2)
-    ),
-    radial-gradient(
-      ellipse at 35% 25%,
-      var(--color-1) 8%,
-      var(--color-2) 12%,
+      var(--color-2),
       transparent
     ),
     radial-gradient(
-      ellipse at 40% 45%,
-      var(--color-1) 5%,
+      circle at 35% 25%,
+      var(--color-1) 4%,
+      var(--color-2) 10%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 55% 65%,
+      var(--color-1) 2%,
+      var(--color-2) 10%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 76% 45%,
+      var(--color-1) 4%,
       var(--color-2) 9%,
-      transparent
+      transparent 20%
     ),
     radial-gradient(
-      circle at 55% 75%,
-      var(--color-1) 12%,
+      circle at 36% 20%,
+      var(--color-2) 4%,
       var(--color-2) 16%,
       transparent
     ),
     radial-gradient(
-      circle at 80% 40%,
-      var(--color-1) 10%,
-      var(--color-2) 14%,
-      transparent
-    ),
-    radial-gradient(
-      circle at 65% 10%,
+      ellipse at 65% 10%,
       var(--color-1) 4%,
       var(--color-2) 8%,
       transparent
     ),
     radial-gradient(
-      circle at 15% 65%,
-      var(--color-1) 8%,
-      var(--color-2) 12%,
+      ellipse at 15% 65%,
+      var(--color-1) 10%,
+      var(--color-2) 50%,
       transparent
     ),
-    radial-gradient(circle at 20%, var(--color-2) 10%, transparent);
-  filter: blur(1px) drop-shadow(0px 0px 20px var(--color-2)) grayscale(100%)
+    radial-gradient(ellipse at 10%, var(--color-2) 15%, transparent);
+  filter: blur(2px) drop-shadow(0px 0px 20px var(--color-2)) grayscale(95%)
     brightness(300%);
   background-blend-mode: multiply;
 }
@@ -162,7 +162,8 @@ h1 {
   filter: brightness(200%);
   transform: skewY(var(--turn));
   animation-delay: -1s;
-  animation: floating 8s ease-in-out infinite;
+  /* animation: floating 8s ease-in-out infinite; */
+  animation: floating 8s ease-in-out infinite, space 28s ease-in-out 1;
 }
 
 body > header {
@@ -189,7 +190,7 @@ main section {
   height: inherit;
   top: 0;
   right: 0;
-  background: var(--color-2);
+  /* background: var(--color-2); */
   padding: 1em;
   animation: floating 8s ease-in-out infinite;
   animation-delay: -2s;
@@ -275,6 +276,15 @@ main span::after {
   }
   50% {
     transform: skewY(var(--turn)) translate(0, var(--distance));
+  }
+}
+
+@keyframes space {
+  0% {
+    transform: translate(-54vw, 0);
+  }
+  100% {
+    transform: translate(0vw, 0);
   }
 }
 
