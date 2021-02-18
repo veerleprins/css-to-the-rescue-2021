@@ -58,6 +58,14 @@ The sources I've used to create this webpage:
 - Dodger. (2011, 19 november). CSS: background image on background color [StackOverflow post]. Stack Overflow. https://stackoverflow.com/questions/8195215/css-background-image-on-background-color
 - freeCodeCamp.org. (2018, 16 september). Print Styles: CSS Tutorial (Day 6 of CSS3 in 30 Days) [Video]. YouTube. https://www.youtube.com/watch?v=CAgLAeykOyU&ab_channel=freeCodeCamp.org
 - Online Tutorials. (2020, 30 december). Happy New Year Banner Animation | Twinkling Star Background Animation Effects using CSS & Javascript [Video]. YouTube. https://www.youtube.com/watch?v=Iw860SbfqP8&t=288s&ab_channel=OnlineTutorials
+<!--
+- https://css-tricks.com/basics-css-blend-modes/
+- https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow()
+- https://stackoverflow.com/questions/26986129/play-multiple-css-animations-at-the-same-time
+- https://www.w3schools.com/CSSref/func_radial-gradient.asp
+- https://codepen.io/veerleprins/pen/bGBWjMr
+- https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/hue-rotate()
+- -->
 
 ## :lock: License
 
