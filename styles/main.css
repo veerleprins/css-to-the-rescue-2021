@@ -1,51 +1,390 @@
-@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
 
 :root {
-  --primary: #fff;
-  --secondary: #000;
-  --color-1: rgb(57, 57, 57);
-  --color-2: #baa37f;
+  --color-1: #030534;
+  --color-2: #c386f1;
+  --white: 10;
 }
 
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  color: var(--color-2);
   margin: 0;
   padding: 0;
 }
 
-html {
-  background-color: var(--color-1);
-  color: var(--primary);
-  font-family: "Raleway", sans-serif;
-  font-weight: 100;
+*::first-letter {
+  text-transform: uppercase;
 }
 
-main {
-  margin: auto;
-  margin-top: 5em;
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 3em;
+html {
+  font-family: "Raleway", sans-serif;
+  font-weight: 100;
+  font-size: 1em;
+}
+
+/*******************************************************
+                        Page:
+********************************************************/
+
+body {
+  --moonSize: 50vw;
+  background-image: url("../images/stars.svg"),
+    repeating-linear-gradient(
+      160deg,
+      var(--color-1),
+      var(--color-2),
+      var(--color-1)
+    );
+  background-size: contain;
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* The moon on the top left: */
+body::before {
+  content: "";
+  position: absolute;
+  top: -45px;
+  left: -45px;
+  z-index: -1;
+  display: block;
+  border-radius: 100%;
+  width: var(--moonSize);
+  height: var(--moonSize);
+  background-image: radial-gradient(
+      closest-side circle at 50% 15%,
+      var(--color-2) 10%,
+      var(--color-2) 20%,
+      transparent 20% 100%
+    ),
+    radial-gradient(
+      closest-side circle at 74% 40%,
+      var(--color-2) 10%,
+      var(--color-2) 20%,
+      transparent 20% 100%
+    ),
+    radial-gradient(
+      closest-side circle at 34% 90%,
+      var(--color-2) 20%,
+      var(--color-2) 40%,
+      transparent 40% 100%
+    ),
+    radial-gradient(
+      closest-side circle at 44% 65%,
+      var(--color-2) 20%,
+      var(--color-2) 30%,
+      transparent 30% 100%
+    ),
+    radial-gradient(
+      closest-side circle at 80% 70%,
+      var(--color-2) 25%,
+      var(--color-2) 40%,
+      transparent 40% 100%
+    ),
+    radial-gradient(
+      closest-side circle at 80% 15%,
+      var(--color-2) 40%,
+      var(--color-2) 60%,
+      transparent 60% 100%
+    ),
+    radial-gradient(
+      closest-side circle at 30% 30%,
+      var(--color-2) 30%,
+      var(--color-2) 25%,
+      transparent 40% 100%
+    ),
+    linear-gradient(300deg, var(--color-2) 5%, var(--color-1) 75%);
+  filter: blur(1px) drop-shadow(0px 0px 20px var(--color-2)) grayscale(95%)
+    brightness(220%);
+  background-blend-mode: multiply;
 }
 
 h1,
 h2 {
-  font-family: "Berkshire Swash", cursive;
+  font-family: "Iceland", cursive;
+  filter: brightness(var(--white));
 }
 
-h2::first-letter,
-h3::first-letter {
-  text-transform: uppercase;
+p,
+cite {
+  filter: brightness(var(--white));
+}
+
+main {
+  margin: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 25em));
+  justify-content: center;
+  grid-gap: 6em;
+  position: relative;
 }
 
 h1 {
-  font-size: 4em;
+  --turn: -1deg;
+  --distance: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  filter: brightness(var(--white));
+  transform: skewY(var(--turn));
+  animation-delay: -1s;
+  animation: floating 8s ease-in-out infinite, spacing 18s ease-in-out;
 }
 
-h2 {
-  background-color: var(--color-2);
-  font-size: 2em;
-  padding: 5px;
+body > header {
+  /* > the direct child of the body */
+  text-align: center;
+  width: 100%;
+  padding: 2em;
+  margin-bottom: 2em;
+}
+
+body > header p {
+  --turn: 2deg;
+  --distance: 20px;
+  color: var(--color-2);
+  filter: brightness(var(--white));
+  animation: floating 8s ease-in-out infinite;
+}
+
+main section {
+  --turn: 0deg;
+  --distance: 20px;
+  background-image: repeating-conic-gradient(
+    from 30deg at center 101%,
+    var(--color-1),
+    var(--color-2),
+    var(--color-1)
+  );
+  padding: 1em;
+  animation: floating 8s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+main section header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 150px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+main section header h2 {
+  font-size: clamp(1.5rem, 10vw, 4rem);
+  filter: brightness(var(--white));
+  margin-bottom: calc(1em / 5);
+  position: relative;
+  line-height: 48px;
+  height: 48px;
+}
+
+main section header p {
+  filter: brightness(var(--white));
+}
+
+main section article {
+  border-bottom: 1px solid var(--color-2);
+  filter: brightness(var(--white));
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  gap: 1em;
+  padding: 2em;
+}
+
+main section article p {
+  grid-column: 1/2;
+}
+
+main section article div {
+  display: grid;
+  grid-row: 1 / 3;
+  grid-column: 2 / 3;
+  place-items: center;
+}
+
+main span {
+  background: var(--color-2);
+  filter: brightness(5);
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  width: 4px;
+  height: 4px;
+  top: 0px;
+  right: 10px;
+  z-index: 2;
+  transform-origin: 100% 0;
+  animation: star 8s infinite ease-out;
+  opacity: 0;
+}
+main span::after {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  top: 0px;
+  left: 4px;
+  border: 2px solid var(--color-2);
+  border-width: 2px 150px 2px 150px;
+  border-color: transparent transparent transparent var(--color-2);
+  transform: rotate(-45deg) translate3d(1px, -1px, 0);
+  transform-origin: 0% 100%;
+  animation: shooting 9s infinite ease-out;
+}
+
+/*******************************************************
+                      Keyframes:
+********************************************************/
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes floating {
+  /* skewY(var(--turn)) */
+  0% {
+    transform: translate(0, calc(var(--distance) * -1));
+  }
+  50% {
+    transform: translate(0, var(--distance));
+  }
+  100% {
+    transform: translate(0, calc(var(--distance) * -1));
+  }
+}
+
+@keyframes spacing {
+  0% {
+    transform: translate(-54vw, 0);
+  }
+  100% {
+    transform: translate(0vw, 0);
+  }
+}
+
+@keyframes shooting {
+  0% {
+    transform: scale(1) rotate(-45deg) translate(0px, 0px);
+  }
+  95% {
+    transform: scale(1) rotate(-45deg) translate(0px, 0px);
+  }
+  100% {
+    transform: scale(0.5) rotate(-45deg) translate(0px, -1px);
+  }
+}
+
+@keyframes star {
+  0% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: scale(0) rotate(0) translate3d(0, 0, 0);
+  }
+  95% {
+    opacity: 1;
+    transform: scale(1) rotate(0) translate3d(-200px, 200px, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) rotate(0) translate3d(-300px, 300px, 0);
+  }
+}
+
+/*******************************************************
+                    Print sheet:
+********************************************************/
+
+@media print {
+  @page {
+    size: portrait;
+    margin: 5% 10%;
+  }
+
+  * {
+    font-family: "Raleway", sans-serif;
+  }
+
+  *::first-letter {
+    text-transform: uppercase;
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  div {
+    text-align: start;
+    color: var(--color-2);
+    filter: brightness(0%);
+  }
+
+  main span::after,
+  main span,
+  main section header::after {
+    display: none;
+  }
+
+  h1 {
+    transform: skew(0deg);
+    font-style: normal;
+    animation: none;
+  }
+
+  body > header {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  body > header p {
+    color: var(--color-2);
+    filter: brightness(0%);
+  }
+
+  main {
+    display: block;
+    margin: 0px;
+  }
+
+  main section {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  main section header {
+    margin: 0px;
+  }
+
+  main section header h2 {
+    margin: 0px;
+    text-align: start;
+  }
+
+  main section header p {
+    color: var(--color-2);
+    filter: brightness(0%);
+  }
+
+  main section article {
+    padding: 0px;
+    margin: 0px;
+    display: block;
+  }
+
+  p,
+  cite {
+    filter: brightness(0%);
+  }
+
+  main section header h2 {
+    font-size: 48px;
+    filter: brightness(0%);
+  }
 }
