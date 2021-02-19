@@ -44,6 +44,7 @@ body {
   overflow-x: hidden;
 }
 
+/* The moon on the top left: */
 body::before {
   content: "";
   position: absolute;
@@ -102,21 +103,6 @@ body::before {
   background-blend-mode: multiply;
 }
 
-/* body::after {
-  content: "";
-  position: absolute;
-  display: block;
-  background-image: url("../images/Star.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 50px;
-  height: 50px;
-  z-index: 5;
-  top: 900px;
-  left: 20px;
-  filter: drop-shadow(0px 0px 15px var(--color-2));
-} */
-
 h1,
 h2 {
   font-family: "Iceland", cursive;
@@ -147,7 +133,6 @@ h1 {
   transform: skewY(var(--turn));
   animation-delay: -1s;
   animation: floating 8s ease-in-out infinite, spacing 18s ease-in-out;
-  /* animation: floating 8ms, spacing 18s; */
 }
 
 body > header {
@@ -179,6 +164,7 @@ main section {
   animation: floating 8s ease-in-out infinite;
   animation-delay: -2s;
 }
+
 main section header {
   position: relative;
   display: flex;
@@ -313,7 +299,7 @@ main span::after {
 }
 
 /*******************************************************
-                    Print style sheet:
+                    Print sheet:
 ********************************************************/
 
 @media print {
@@ -322,9 +308,9 @@ main span::after {
     margin: 5% 10%;
   }
 
-  /* * {
-    font-family: "Inter", sans-serif;
-  } */
+  * {
+    font-family: "Raleway", sans-serif;
+  }
 
   *::first-letter {
     text-transform: uppercase;
