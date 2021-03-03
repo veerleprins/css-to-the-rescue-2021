@@ -2,7 +2,7 @@
 
 ## CSS to the Rescue @cmda-minor-web 2020 - 2021
 
-<!-- <img width="1624" alt="Screenshot of the page with the visualizations." src="https://user-images.githubusercontent.com/35265583/104816885-454efe00-581e-11eb-8c93-da6a5e05cfeb.png"> -->
+<img width="1624" alt="Screenshot of the page." src="https://user-images.githubusercontent.com/35265583/109835968-00ebb600-7c44-11eb-96d5-38d1bbb968d4.png">
 
 ## Table of contents:
 
@@ -12,7 +12,7 @@
 - [Install](#arrow_down-install)
 - [GitHub Pages](#globe_with_meridians-github-pages)
 - [Techniques](#star-techniques)
-- [Log](#:page_with_curl-log)
+- [Log](#page_with_curl-log)
 - [Sources](#books-sources)
 
 ## :black_nib: Description
@@ -30,7 +30,7 @@ This repository shows the project in which I transform the simple HTML structure
 - Two colors
 - Responsive without media queries
 
-To read the full process you can have a look at my [Log](#:page_with_curl-log).
+To read the full process you can have a look at my [Log](#page_with_curl-log).
 
 ## :globe_with_meridians: Github Pages
 
