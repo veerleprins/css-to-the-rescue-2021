@@ -30,7 +30,8 @@ html {
 ********************************************************/
 
 body {
-  --moonSize: 50vw;
+  --moonSize: min(40vw, 400px);
+  --planetSize: min(40vw, 300px);
   background-image: url("../images/stars.svg"),
     repeating-linear-gradient(
       160deg,
@@ -39,7 +40,6 @@ body {
       var(--color-1)
     );
   background-size: contain;
-  height: 100%;
   position: relative;
   overflow-x: hidden;
 }
@@ -47,9 +47,9 @@ body {
 /* The moon on the top left: */
 body::before {
   content: "";
-  position: absolute;
-  top: -45px;
-  left: -45px;
+  position: fixed;
+  top: -25px;
+  left: -25px;
   z-index: -1;
   display: block;
   border-radius: 100%;
@@ -103,6 +103,33 @@ body::before {
   background-blend-mode: multiply;
 }
 
+body::after {
+  content: "";
+  position: fixed;
+  right: 20vw;
+  top: 20vh;
+  z-index: -1;
+  display: block;
+  border-radius: 100%;
+  width: var(--planetSize);
+  height: var(--planetSize);
+  background-image: repeating-linear-gradient(
+    200deg,
+    var(--color-1) 0% 1%,
+    var(--color-2) 20% 21%,
+    var(--color-1) 40% 41%
+  );
+  filter: url("#colorBlur");
+}
+
+svg {
+  height: 0;
+  width: 0;
+  position: absolute;
+  right: 15px;
+  top: 75vh;
+}
+
 h1,
 h2 {
   font-family: "Iceland", cursive;
@@ -121,6 +148,7 @@ main {
   justify-content: center;
   grid-gap: 6em;
   position: relative;
+  padding-bottom: 4em;
 }
 
 h1 {
@@ -148,7 +176,7 @@ body > header p {
   --distance: 20px;
   color: var(--color-2);
   filter: brightness(var(--white));
-  animation: floating 8s ease-in-out infinite;
+  animation: floating 8s ease-in-out infinite, spacing 18s ease-in-out;
 }
 
 main section {
@@ -161,6 +189,7 @@ main section {
     var(--color-1)
   );
   padding: 1em;
+  box-shadow: 5px 5px 30px var(--color-1);
   animation: floating 8s ease-in-out infinite;
   animation-delay: -2s;
 }
@@ -219,7 +248,7 @@ main span {
   height: 4px;
   top: 0px;
   right: 10px;
-  z-index: 2;
+  z-index: -1;
   transform-origin: 100% 0;
   animation: star 8s infinite ease-out;
   opacity: 0;
@@ -242,14 +271,7 @@ main span::after {
                       Keyframes:
 ********************************************************/
 
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes floating {
-  /* skewY(var(--turn)) */
   0% {
     transform: translate(0, calc(var(--distance) * -1));
   }
@@ -326,6 +348,7 @@ main span::after {
     filter: brightness(0%);
   }
 
+  svg,
   main span::after,
   main span,
   main section header::after {
@@ -336,6 +359,7 @@ main span::after {
     transform: skew(0deg);
     font-style: normal;
     animation: none;
+    margin-bottom: 0.5em;
   }
 
   body > header {
@@ -373,14 +397,29 @@ main span::after {
   }
 
   main section article {
-    padding: 0px;
-    margin: 0px;
-    display: block;
+    padding: 0;
+    margin-bottom: 1em;
+    display: grid;
+    gap: 0;
+  }
+
+  main section article div {
+    grid-template-columns: 2;
+    position: relative;
+  }
+
+  main section article div::before {
+    content: "€";
+    position: absolute;
+    left: 2.5em;
   }
 
   p,
   cite {
     filter: brightness(0%);
+    widows: 3;
+    orphans: 3;
+    font-size: 12pt;
   }
 
   main section header h2 {
