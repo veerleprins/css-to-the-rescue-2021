@@ -84,15 +84,17 @@ Based on the guest lecture and the theme sessions, I then decided to make a moon
 
 #### What went wrong
 
-My first versions of making a moon didn't quite go the way I wanted. I didn't know exactly how to use the gradients to make a good moon. This was my first version:  
-[Moon version 1](https://codepen.io/veerleprins/pen/BaQVmPd)
-[Moon version 2](https://codepen.io/veerleprins/pen/RwoJjmK?editors=1100)
-[Moon version 3](https://codepen.io/veerleprins/pen/BaQVJBJ?editors=1100)
+My first versions of making a moon didn't quite go the way I wanted. I didn't know exactly how to use the gradients to make a good moon. This was my first version:
+
+- [Moon version 1](https://codepen.io/veerleprins/pen/BaQVmPd)
+- [Moon version 2](https://codepen.io/veerleprins/pen/RwoJjmK?editors=1100)
+- [Moon version 3](https://codepen.io/veerleprins/pen/BaQVJBJ?editors=1100)
 
 #### What went right
 
-After a lot of hassle and Sanne's theme session on gradients, I finally knew how it worked. This was what went well in the end: I practiced a lot without explanation and with explanation I just took that extra step to get my moon right. I am very proud of this:  
-[Final version of my moon](https://codepen.io/veerleprins/pen/ZEBRvGN?editors=1100)
+After a lot of hassle and Sanne's theme session on gradients, I finally knew how it worked. This was what went well in the end: I practiced a lot without explanation and with explanation I just took that extra step to get my moon right. I am very proud of this:
+
+- [Final version of my moon](https://codepen.io/veerleprins/pen/ZEBRvGN?editors=1100)
 
 Furthermore, I started looking at different fonts to choose a font that fits the galaxy theme. Ultimately, I am quite proud of the Iceland font, which in my opinion fits best with the space theme. The disadvantage is that it took me quite a long time to find a nice font.
 
@@ -110,8 +112,8 @@ That's how I started looking for small animations online. Eventually I came acro
 
 What mainly went wrong is that it took me a long time before I had an idea that would make me enthusiastic. It also went wrong due to personal circumstances. Furthermore, making two animations on the title was not smooth either. I tried to add two animations on the same h1 element that would animate at the same time. This just didn't quite work. Below you can see a link in which that did not work completely:
 
-[My codepen test with two animations](https://codepen.io/veerleprins/pen/gOLgPGE)
-[My second codepen test with two animations](https://codepen.io/veerleprins/pen/NWbdMYK)
+- [My codepen test with two animations](https://codepen.io/veerleprins/pen/gOLgPGE)
+- [My second codepen test with two animations](https://codepen.io/veerleprins/pen/NWbdMYK)
 
 #### What went right
 
